@@ -1,0 +1,35 @@
+{
+  "name": "ceisum-geomotry",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "cesium": "^1.40.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.1",
+    "compression": "^1.7.1",
+    "eslint": "^4.13.1",
+    "express": "^4.16.2",
+    "webpack": "^3.10.0",
+    "webpack-glsl-loader": "^1.0.1",
+    "yargs": "^10.0.3"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "build": "webpack --env=dev --progress --profile --colors",
+    "eslint": "eslint  ./Source --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/1617301803/cesium-geometry.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/1617301803/cesium-geometry/issues"
+  },
+  "homepage": "https://github.com/1617301803/cesium-geometry#readme"
+}
