@@ -10,10 +10,11 @@
     <meta name="viewport"
           content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
     <title>Hello World!</title>
-    <script src=../node_modules/cesium/Build/CesiumUnminified/Cesium.js></script>
+   <!-- <script src=../node_modules/cesium/Build/CesiumUnminified/Cesium.js></script>-->
+    <script src=../Third/Cesium/Cesium.js></script>
     <script src="../Build/CesiumGeometry/CesiumGeometry.js"></script>
     <style>
-        @import url(../node_modules/cesium/Build/CesiumUnminified/Widgets/widgets.css);
+        @import url(../Third/Cesium/Widgets/widgets.css);
 
         html,
         body,
@@ -41,7 +42,7 @@
     var primitives = scene.primitives;
 
     var colors = [
-        new Cesium.Color(77 / 255, 201 / 255, 255 / 255, ),
+        new Cesium.Color(77 / 255, 201 / 255, 255 / 255,0.9 ),
         new Cesium.Color(255 / 255, 201 / 255, 38 / 255, 0.9),
         new Cesium.Color(221 / 255, 221 / 255, 221 / 255, 0.9)
     ];
@@ -57,9 +58,9 @@
                     semiMinorAxis: 300000.0,
                     semiMajorAxis: 300000.0,
                     height: 0.0,
-                    /*material: new Cesium.ElliposidFadeMaterialProperty({
+                    material: new Cesium.ElliposidFadeMaterialProperty({
                         color: colors[i % 3]
-                    }),*/
+                    }),
                     //material: colors[i % 3],
                     //material: new Cesium.ColorMaterialProperty(colors[i % 3])
                 }
