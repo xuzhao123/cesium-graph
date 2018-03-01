@@ -1,0 +1,81 @@
+{
+    "tilemap": {
+        "tilemapservice": "http://www.osgeo.org/services/tilemapservice.xml",
+        "version": "1.0.0",
+        "title": "tms",
+        "abstract": null,
+        "srs": "EPSG:3785",
+        "vsrs": null,
+        "boundingbox": {
+            "maxx": "20037508.3427892",
+            "maxy": "19971868.8804085",
+            "minx": "-20037508.3427892",
+            "miny": "-19971868.8804086"
+        },
+        "origin": {
+            "x": "-20037508.3427890",
+            "y": "-20037508.3427890"
+        },
+        "tileformat": {
+            "extension": "png",
+            "height": "256",
+            "mime-type": "image/png",
+            "width": "256"
+        },
+        "tilesets": {
+            "profile": "global-mercator",
+            "tileset": [
+                {
+                    "href": "",
+                    "order": "0",
+                    "units-per-pixel": "156543.0339"
+                },
+                {
+                    "href": "",
+                    "order": "1",
+                    "units-per-pixel": "78271.516"
+                },
+                {
+                    "href": "",
+                    "order": "2",
+                    "units-per-pixel": "39135.758"
+                },
+                {
+                    "href": "",
+                    "order": "3",
+                    "units-per-pixel": "19567.879"
+                },
+                {
+                    "href": "",
+                    "order": "4",
+                    "units-per-pixel": "9783.9395"
+                },
+                {
+                    "href": "",
+                    "order": "5",
+                    "units-per-pixel": "4891.96975"
+                },
+                {
+                    "href": "",
+                    "order": "6",
+                    "units-per-pixel": "2445.984875"
+                },
+                {
+                    "href": "",
+                    "order": "7",
+                    "units-per-pixel": "1222.9924375"
+                },
+                {
+                    "href": "",
+                    "order": "8",
+                    "units-per-pixel": "611.49621875"
+                },
+                {
+                    "href": "",
+                    "order": "9",
+                    "units-per-pixel": "305.748109375"
+                }
+            ]
+        }
+    }
+}

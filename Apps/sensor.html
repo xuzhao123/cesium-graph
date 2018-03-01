@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Use correct character set. -->
+    <meta charset="utf-8">
+    <!-- Tell IE to use the latest, best version. -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Make the application on mobile take up the full browser screen and disable user scaling. -->
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <title>Hello World!</title>
+    <script src=../node_modules/cesium/Build/CesiumUnminified/Cesium.js></script>
+    <script src="../Build/CesiumGeometry/CesiumGeometry.js"></script>
+    <style>
+        @import url(../node_modules/cesium/Build/CesiumUnminified/Widgets/widgets.css);
+
+        html,
+        body,
+        #cesiumContainer {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+<body>
+<div id="cesiumContainer"></div>
+<script>
+    var viewer = new Cesium.Viewer('cesiumContainer', {
+        imageryProvider: Cesium.createTileMapServiceImageryProvider({
+            url: '../Map'
+        }),
+        baseLayerPicker: false,
+    });
+
+    var scene = viewer.scene;
+    var primitives = scene.primitives;
+    var camera = scene.camera;
+
+    var position = Cesium.Cartesian3.fromDegrees(Math.random(), Math.random());
+    var entity = viewer.entities.add({
+        position: position,
+        billboard: {
+            scale: 1,
+            image: './facility.html',
+            horizontalOrigin: Cesium.HorizontalOrigin.CENTER,
+            verticalOrigin: Cesium.VerticalOrigin.CENTER
+        },
+        rectangularSensor: new Cesium.RectangularSensorGraphics({
+            //gaze: targetEntity,
+            radius: 1000000,
+            xHalfAngle: Cesium.Math.toRadians(45),
+            yHalfAngle: Cesium.Math.toRadians(45),
+            lineColor: new Cesium.Color(0.0, 1.0, 1.0, 1.0),
+            material: new Cesium.Color(0.0, 1.0, 1.0, 0.4),
+            showScanPlane: true,
+            scanPlaneColor: new Cesium.Color(0.0, 1.0, 1.0, 1.0),
+            scanPlaneMode: 'vertical',
+            scanPlaneRate: 3,
+
+        })
+    });
+
+</script>
+</body>
+
+</html>

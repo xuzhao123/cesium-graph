@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Use correct character set. -->
+    <meta charset="utf-8">
+    <!-- Tell IE to use the latest, best version. -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Make the application on mobile take up the full browser screen and disable user scaling. -->
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <title>Hello World!</title>
+    <script src=../node_modules/cesium/Build/CesiumUnminified/Cesium.js></script>
+    <script src="../Build/CesiumGeometry/CesiumGeometry.js"></script>
+    <style>
+        @import url(../node_modules/cesium/Build/CesiumUnminified/Widgets/widgets.css);
+
+        html,
+        body,
+        #cesiumContainer {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+<body>
+<div id="cesiumContainer"></div>
+<script>
+    var viewer = new Cesium.Viewer('cesiumContainer', {
+        imageryProvider: Cesium.createTileMapServiceImageryProvider({
+            url: '../Map'
+        }),
+        baseLayerPicker: false,
+    });
+
+    var scene = viewer.scene;
+    var primitives = scene.primitives;
+
+
+    var colors = [
+        new Cesium.Color(77 / 255, 201 / 255, 255 / 255, 1),
+        new Cesium.Color(255 / 255, 201 / 255, 38 / 255, 1),
+        new Cesium.Color(221 / 255, 221 / 255, 221 / 255, 1)
+    ];
+
+    function add() {
+        for (var i = 0, len = 300; i < len; i++) {
+            var startPoint = Cesium.Cartesian3.fromDegrees(Math.random() * 100, Math.random() * 100);
+            var endPoint = Cesium.Cartesian3.fromDegrees(Math.random() * 100, Math.random() * 100);
+
+            var positions = Cesium.getLinkedPointList(startPoint, endPoint, 30000, 50);
+
+            var glowingLine = viewer.entities.add({
+                polyline: {
+                    positions: positions,
+                    width: 5,
+                    //material: new Cesium.PolylineAttackLinkMaterialProperty({
+                    material: new Cesium.PolylineArrowLinkMaterialProperty({
+                        //color: new Cesium.Color(77 / 255, 201 / 255, 255 / 255, 1)
+                        color: colors[i%3],
+                        duration:1000
+                    }),
+                    /*material: new Cesium.PolylineDashMaterialProperty({
+                        color: colors[i % 3]
+                    })*/
+                }
+            });
+        }
+        /*
+         for (var i = 0, len = 300; i < len; i++) {
+         var startPoint = Cesium.Cartesian3.fromDegrees(Math.random() * 100, Math.random() * 100);
+         var endPoint = Cesium.Cartesian3.fromDegrees(Math.random() * 100, Math.random() * 100);
+
+         var positions = Cesium.getLinkedPointList(startPoint, endPoint, 30000, 50);
+
+         var glowingLine = viewer.entities.add({
+         name: 'Glowing blue line on the surface',
+         polyline: {
+         positions: positions,
+         width: 5,
+         material: new Cesium.PolylineAttackLinkMaterialProperty({
+         color: new Cesium.Color(255 / 255, 201 / 255, 38 / 255, 1)
+         })
+         }
+         });
+         }
+
+         for (var i = 0, len = 300; i < len; i++) {
+         var startPoint = Cesium.Cartesian3.fromDegrees(Math.random() * 100, Math.random() * 100);
+         var endPoint = Cesium.Cartesian3.fromDegrees(Math.random() * 100, Math.random() * 100);
+
+         var positions = Cesium.getLinkedPointList(startPoint, endPoint, 30000, 50);
+
+         var glowingLine = viewer.entities.add({
+         name: 'Glowing blue line on the surface',
+         polyline: {
+         positions: positions,
+         width: 5,
+         material: new Cesium.PolylineAttackLinkMaterialProperty({
+         color: new Cesium.Color(221 / 255, 221 / 255, 221 / 255, 1)
+         })
+         }
+         });
+         }*/
+    }
+
+    add();
+
+    /*setInterval(function () {
+     viewer.entities.removeAll();
+     add();
+     }, 1200)*/
+
+
+</script>
+</body>
+
+</html>

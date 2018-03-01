@@ -1,12 +1,15 @@
 var path = require('path');
+var fileHelper = require('./webpack-util/fileHelper');
+
+fileHelper.copy(__dirname+'/Source/Textures','Build/CesiumGeometry/Textures');
 
 module.exports = {
 	devtool: 'source-map',
-	entry: './Source/CesiumGeometry.js',
+	entry: './Source/cesiumGeometry.js',
 	output: {
 		library: 'CesiumGeometry',
 		libraryTarget: 'umd',
-		path: path.resolve(__dirname, 'Build'),
+		path: path.resolve(__dirname, 'Build/CesiumGeometry'),
 		filename: 'CesiumGeometry.js'
 	},
 	externals: [
