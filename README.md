@@ -6,29 +6,23 @@
 
 支持最新版本的cesium，旧版未经测试，暂定1.30版本。
 
-<img width="400" src="https://github.com/1617301803/cesium-geometry/blob/master/Resource/elliposid.gif"/>
-
 ### Start
-
 ``` bash
-
 npm install
-
 npm run start
-
 ```
 
 ### Example
 
-####动画圆
+动画圆
 
 <img width="400" src="https://github.com/1617301803/cesium-geometry/blob/master/Resource/elliposid.gif"/>
 
-####箭头动画
+箭头动画
 
 <img width="400" src="https://github.com/1617301803/cesium-geometry/blob/master/Resource/polylineArrow.gif"/>
 
-####传感器
+传感器
 
 <img width="400" src="https://github.com/1617301803/cesium-geometry/blob/master/Resource/sensor.gif"/>
 
