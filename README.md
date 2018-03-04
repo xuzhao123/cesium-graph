@@ -8,4 +8,28 @@
 
 <img width="400" src="https://github.com/1617301803/cesium-geometry/blob/master/Resource/elliposid.gif"/>
 
-### start
+### Start
+
+``` bash
+
+npm install
+
+npm run start
+
+```
+
+### Example
+
+####动画圆
+
+<img width="400" src="https://github.com/1617301803/cesium-geometry/blob/master/Resource/elliposid.gif"/>
+
+####箭头动画
+
+<img width="400" src="https://github.com/1617301803/cesium-geometry/blob/master/Resource/polylineArrow.gif"/>
+
+####传感器
+
+<img width="400" src="https://github.com/1617301803/cesium-geometry/blob/master/Resource/sensor.gif"/>
+
+或者打开浏览器网址，输入127.0.0.1:3000，即可观看效果
