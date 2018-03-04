@@ -43,7 +43,7 @@
 		var host = server.address().address;
 		var port = server.address().port;
 
-		console.log('listen at http://%s:%s', host, port);
+		console.log('listen at http://127.0.0.1:%s',port);
 	});
 
 	server.on('close', function () {
