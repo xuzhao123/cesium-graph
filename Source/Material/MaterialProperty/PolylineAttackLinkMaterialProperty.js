@@ -20,6 +20,7 @@ function PolylineAttackLinkMaterialProperty(options) {
     this._colorSubscription = undefined;
 
     this.color = options.color;
+    this.duration = options.duration || 1000;
 
     this._time = undefined;
 }
@@ -84,7 +85,7 @@ PolylineAttackLinkMaterialProperty.prototype.getValue = function (time, result) 
     if (this._time === undefined) {
         this._time = time.secondsOfDay;
     }
-    result.time = time.secondsOfDay - this._time;
+    result.time = (time.secondsOfDay - this._time) / this.duration;
     return result;
 };
 
